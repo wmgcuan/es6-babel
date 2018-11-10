@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./dist/index.js"></script>
+</head>
+<body>
+  Hello ECMA Script 6<br>
+  babel src/index.js -o dist/index.js<br><br>
+  注：<br>
+  1 dist文件夹需手动创建<br>
+  2 要运行babel命令需全局安装：cnpm install -g babel-cli<br>
+  3 本地安装运行命令：<br>
+  "scripts": {<br>
+    "build": "babel src -d dist"<br>
+  }<br>
+  4 只能做基础转换<br>
+  当使用import './mod.js'时，会转换成require('./mod.js')<br>
+  模块依赖时请使用webpack<br><br>
+
+  babel命令<br>
+  # 转码结果输出到标准输出<br>
+  $ babel example.js<br><br>
+
+  # 转码结果写入一个文件<br>
+  # --out-file 或 -o 参数指定输出文件<br>
+  $ babel example.js --out-file compiled.js<br>
+  # 或者<br>
+  $ babel example.js -o compiled.js<br><br>
+
+  # 整个目录转码<br>
+  # --out-dir 或 -d 参数指定输出目录<br>
+  $ babel src --out-dir lib<br>
+  # 或者<br>
+  $ babel src -d lib<br><br>
+
+  # -s 参数生成source map文件<br>
+  $ babel src -d lib -s<br>
+
+
+
+</body>
+</html>
